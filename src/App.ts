@@ -1,1 +1,1 @@
-export const App = () => console.info("Hey!");
+export const App = (): void => console.info('Hey!');
