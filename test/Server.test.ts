@@ -1,4 +1,4 @@
-import { App } from '../src/App';
+import { App } from '../src/Server';
 
 describe('App', () => {
   it('should return hey!', () => {

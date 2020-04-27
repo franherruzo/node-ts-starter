@@ -2,9 +2,18 @@
   "name": "node-ts-starter",
   "version": "1.0.0",
   "description": "Boilerplate with nodejs, typescript, jest and eslint",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "jest --forceExit --coverage --verbose"
+    "start": "npm run serve",
+    "start:dev": "npm run ts:build && nodemon dist/server.js",
+    "debug": "npm run build && npm run watch-debug",
+    "build": "npm run ts:build && npm run lint",
+    "serve": "node dist/server.js",
+    "test": "jest --forceExit --coverage --verbose",
+    "test:watch": "npm run test -- --watchAll",
+    "ts:build": "tsc",
+    "ts:watch": "tsc -w",
+    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
   },
   "repository": {
     "type": "git",
@@ -29,6 +38,7 @@
     "husky": "^4.2.5",
     "jest": "^25.4.0",
     "lint-staged": "^10.1.7",
+    "nodemon": "^2.0.3",
     "prettier": "^2.0.5",
     "ts-jest": "^25.4.0",
     "ts-node": "^8.9.1",
