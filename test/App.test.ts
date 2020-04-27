@@ -1,9 +1,9 @@
-import { App } from "../src/App";
+import { App } from '../src/App';
 
-describe("App", () => {
-  it("should return hey!", () => {
+describe('App', () => {
+  it('should return hey!', () => {
     const app = App();
 
-    expect(app).toBe("hey!");
+    expect(app).toBe('Hey!');
   });
 });
