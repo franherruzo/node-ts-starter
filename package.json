@@ -12,8 +12,9 @@
     "serve": "node dist/index.js",
     "serve:watch": "nodemon dist/index.js",
     "serve:debug:watch": "nodemon --inspect dist/index.js",
-    "test": "jest --forceExit --coverage --verbose",
-    "test:watch": "npm run test -- --watchAll",
+    "test": "jest --forceExit --verbose",
+    "test:watch": "npm run test -- --watch",
+    "test:related": "npm run test -- -o",
     "ts:build": "tsc",
     "ts:watch": "tsc -w",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
@@ -57,7 +58,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "npm run test:related && lint-staged",
       "pre-push": "npm test"
     }
   }
