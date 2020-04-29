@@ -4,7 +4,7 @@
   "description": "Boilerplate with nodejs, typescript, jest and eslint",
   "main": "index.js",
   "scripts": {
-    "start": "npm run serve",
+    "start": "npm run ts:build && npm run serve",
     "start:dev": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run ts:watch\" \"npm run serve:watch\"",
     "debug": "npm run build && npm run debug:watch",
     "debug:watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run ts:watch\" \"npm run serve:debug:watch\"",
